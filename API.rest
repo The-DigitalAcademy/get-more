@@ -1,0 +1,14 @@
+###test server
+http://localhost:60000
+
+
+###
+POST http://localhost:5000/api/auth/signup
+content-type: application/json
+
+{
+    "firstname": "Khaya",
+    "lastname": "Mbatha",
+    "email": "khayam@gmail.com",
+    "password": "123456"
+}
