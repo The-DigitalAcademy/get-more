@@ -1,11 +1,11 @@
-const User = require("../model/user")
+const User = require("../model/user");
 
 // auth.js
 exports.signup = async (req, res) => {
   const { firstname, lastname, email, password } = req.body;
 
   if (password.length < 6) {
-    return res.status(400).json({ message: "Password less than 6 characters" })
+    return res.status(400).json({ message: "Password less than 6 characters" });
   }
 
   try {
@@ -13,22 +13,20 @@ exports.signup = async (req, res) => {
       firstname,
       lastname,
       email,
-      password
-    }).then(user =>
+      password,
+    }).then((user) =>
       res.status(200).json({
         message: "User successfully created",
         user,
       })
     );
   } catch (err) {
-    console.log(err)
+    console.log(err);
     res.status(401).json({
       message: "User not successful created",
-
-    })
+    });
   }
-
-}
+};
 
 // auth.js
 // exports.login = async (req, res, next) => {
@@ -43,25 +41,22 @@ exports.signup = async (req, res) => {
 exports.signin = async (req, res, next) => {
   const { firstname, password } = req.body;
   try {
-    const user = await User.findOne({ firstname, password })
+    const user = await User.findOne({ firstname, password });
     if (!firstname) {
       res.status(401).json({
         message: "Signin not successful",
         error: "User not found",
-      })
+      });
     } else {
       res.status(200).json({
         message: "Signin successful",
         user,
-      })
+      });
     }
   } catch (error) {
     res.status(400).json({
       message: "An error occurred",
       error: error.message,
-    })
+    });
   }
-}
-
-
-
+};
