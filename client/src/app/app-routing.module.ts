@@ -9,8 +9,7 @@ const routes: Routes = [
     path: 'private',
     component: PrivateComponent,
     children: [
-      { path: 'login', component: LoginPageComponent },
-      { path: '', component: SignupComponent },
+      { path: 'signin', component: LoginPageComponent },
       { path: 'signup', component: SignupComponent },
     ],
   },
