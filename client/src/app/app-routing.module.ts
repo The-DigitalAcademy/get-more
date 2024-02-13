@@ -1,13 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { SignupComponent } from './pages/signup/signup.component';
 import { PrivateComponent } from './layout/private/private.component';
+import { LoginPageComponent } from './pages/signin-page/login-page.component';
 
 const routes: Routes = [
   {
     path: 'private',
     component: PrivateComponent,
-    children: [{ path: 'login', component: LoginPageComponent }],
+    children: [
+      { path: 'signin', component: LoginPageComponent },
+      { path: 'signup', component: SignupComponent },
+    ],
   },
 ];
 
