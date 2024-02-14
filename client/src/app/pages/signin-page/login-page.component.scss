@@ -1,7 +1,3 @@
-* {
-    font-family: "Lato", sans-serif;
-}
-
 .main-head {
   height: 150px;
   background: #fff;
@@ -30,7 +26,7 @@
   }
 
   .register-form {
-    margin-top: 10%;
+    margin-top: 35%;
   }
 }
 
@@ -66,7 +62,6 @@
   font-weight: 300;
 }
 
-.btn-black {
-  background-color: #000 !important;
+.signin{  background-color: var(--purple100) !important;
   color: #fff;
 }
