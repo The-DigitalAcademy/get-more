@@ -3,7 +3,7 @@ http://localhost:60000
 
 
 ###
-POST http://localhost:5000/api/auth/signup
+POST http://localhost:60200/api/users/signup
 content-type: application/json
 
 {

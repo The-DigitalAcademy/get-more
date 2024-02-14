@@ -18,8 +18,8 @@ exports.signup = async (req, res) => {
       res.status(200).json({
         message: "User successfully created",
         user,
-      })
-    );
+      }) 
+    );console.log(User)
   } catch (err) {
     console.log(err)
     res.status(401).json({
@@ -29,6 +29,7 @@ exports.signup = async (req, res) => {
   }
 
 }
+
 
 // auth.js
 // exports.login = async (req, res, next) => {
@@ -40,6 +41,8 @@ exports.signup = async (req, res) => {
 //     })
 //   }
 // }
+
+
 exports.signin = async (req, res, next) => {
   const { firstname, password } = req.body;
   try {
@@ -62,6 +65,4 @@ exports.signin = async (req, res, next) => {
     })
   }
 }
-
-
 
