@@ -1,11 +1,10 @@
-.footer {
-    width: 100%;
-    text-align: center;
-    padding: 1rem;
-    border-top: solid 1px var(--blue100);
-    font-weight: bold;
-  
-    span {
-      font-weight: 100;
-    }
-  }
+#component {
+  position: fixed;
+  bottom: 0px;
+  width: 390px;
+}
+
+.toolbox {
+  color: var(--purple100);
+  background-color: var(--purple50);
+}
