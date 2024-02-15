@@ -7,13 +7,17 @@ import { AppComponent } from './app.component';
 import { SignupComponent } from 'src/app/pages/signup/signup.component';
 import { TitlePageComponent } from './ui/title-page/title-page.component';
 import { PrivateComponent } from './layout/private/private.component';
+import { LandingPageComponent } from './pages/customer/landing-page/landing-page.component';
+import { ToolBarComponent } from './ui/tool-bar/tool-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignupComponent,
     TitlePageComponent,
-    PrivateComponent
+    PrivateComponent,
+    LandingPageComponent,
+    ToolBarComponent
 
   ],
 
