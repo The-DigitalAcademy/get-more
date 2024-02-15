@@ -12,3 +12,14 @@ content-type: application/json
     "email": "khayam@gmail.com",
     "password": "123456"
 }
+
+
+###
+
+POST http://localhost:60200/api/users/signin
+content-type: application/json
+
+{
+    "email":"khayam@gmail.com",
+    "password": "1234567"
+}
