@@ -8,6 +8,8 @@ import { TitlePageComponent } from './ui/title-page/title-page.component';
 import { PrivateComponent } from './layout/private/private.component';
 import { LandingPageComponent } from './pages/customer/landing-page/landing-page.component';
 import { ToolBarComponent } from './ui/tool-bar/tool-bar.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +21,7 @@ import { ToolBarComponent } from './ui/tool-bar/tool-bar.component';
     ToolBarComponent,
   ],
 
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

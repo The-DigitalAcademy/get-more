@@ -6,10 +6,13 @@ const app = express()
 const connectDB = require('./Database/db')
 const port = process.env.PORT || 60000
 
+//Connecting the Database
 connectDB()
 
 app.use(cors())
 app.use(express.json())
+
+
 
 app.use('/api/users', require('./Routes/routes'))
 

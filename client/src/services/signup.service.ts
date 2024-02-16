@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { SignupInterface } from 'src/app/pages/interface/signup';
+import { SignupInterface } from 'src/app/interface/signup';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -11,22 +12,14 @@ export class SignupService {
   userData?: SignupInterface;
 
   Users: any 
-  router: any;
+
   
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
-  SignupFn(firstName: string, lastName: string, email: string, password: string): Observable<any> {  
-    const body = {
-      firstName: firstName,
-      lastName: lastName,
-      email: email,
-      password: password
-      
-    };
-    
-    return this.http.post<any>('http://localhost:5000/api/signup' ,this.SignupFn );
+  SignupFn(): Observable<any> {  
+    return this.http.post<any>('http://localhost:60200/api/signup' ,this.SignupFn );
   }
 
   saveToStorage(user: SignupInterface) {

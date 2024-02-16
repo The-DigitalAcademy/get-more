@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { Validators, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
+import { SignupService } from 'src/services/signup.service';
+
 
 @Component({
   selector: 'app-signup',
@@ -12,13 +16,22 @@ export class SignupComponent {
   email: string = '';
   password: string = '';
 
+  form = this.fb.nonNullable.group({
+    firstname: ['', Validators.required],
+    lastname: ['', Validators.required],
+    email: ['', Validators.required],
+    password: ['', Validators.required],
+  });
+
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private signupService: SignupService,
+  ) {}
+
   // Method to handle form submission
   onSubmit(): void {
-    // Perform actions with the form data, such as sending it to a server
-    console.log('First Name:', this.firstName);
-    console.log('Last Name:', this.lastName);
-    console.log('Email:', this.email);
-    console.log('Password:', this.password);
-    // Additional logic can be added here
+    
+
   }
 }
