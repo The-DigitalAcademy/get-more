@@ -1,5 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
-    --purple100: rgb(113, 11, 113);
-    --purple50: rgb(188, 97, 188);
-  }
+  --purple100: #278dfa;
+  --purple50: rgb(227, 226, 226);
+}
+
+body {
+  background-color: #eff0f0;
+}
