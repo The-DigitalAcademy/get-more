@@ -1,4 +1,6 @@
-const User = require("../model/user");
+
+const User = require("../model/user")
+const bcrypt = require('bcrypt')
 
 // auth.js
 exports.signup = async (req, res) => {
@@ -18,8 +20,8 @@ exports.signup = async (req, res) => {
       res.status(200).json({
         message: "User successfully created",
         user,
-      })
-    );
+      }) 
+    );console.log(User)
   } catch (err) {
     console.log(err);
     res.status(401).json({
@@ -38,18 +40,56 @@ exports.signup = async (req, res) => {
 //     })
 //   }
 // }
-exports.signin = async (req, res, next) => {
+
+
+exports.signup = async (req, res, next) => {
   const { firstname, password } = req.body;
   try {
-    const user = await User.findOne({ firstname, password });
+
+    const user = await User.findOne({ firstname,lastname,email, password })
+
     if (!firstname) {
       res.status(401).json({
-        message: "Signin not successful",
+        message: "Signup not successful",
+        error: "User not found",
+      })
+    } else {
+      res.status(200).json({
+        message: "Signup successful",
+        user,
+      })
+    }
+  } catch (error) {
+    res.status(400).json({
+      message: "An error occurred",
+      error: error.message,
+    })
+  }
+}
+
+
+// auth.js
+// exports.login = async (req, res, next) => {
+//   const {  firstname, password } = req.body
+//   // Check if username and password is provided
+//   if (! firstname || !password) {
+//     return res.status(400).json({
+//       message: "Username or Password not present",
+//     })
+//   }
+// }
+exports.signin = async (req, res, next) => {
+  const { email, password } = req.body;
+  try {
+    const user = await User.findOne({ email, password })
+    if (!email) {
+      res.status(401).json({
+        message: "sign not successful",
         error: "User not found",
       });
     } else {
       res.status(200).json({
-        message: "Signin successful",
+        message: "signin successful",
         user,
       });
     }

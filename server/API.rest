@@ -3,7 +3,7 @@ http://localhost:60000
 
 
 ###
-POST http://localhost:5000/api/auth/signup
+POST http://localhost:60200/api/users/signup
 content-type: application/json
 
 {
@@ -11,4 +11,15 @@ content-type: application/json
     "lastname": "Mbatha",
     "email": "khayam@gmail.com",
     "password": "123456"
+}
+
+
+###
+
+POST http://localhost:60200/api/users/signin
+content-type: application/json
+
+{
+    "email":"khayam@gmail.com",
+    "password": "1234567"
 }
