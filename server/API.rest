@@ -1,25 +1,30 @@
+@SERVER=http://localhost:6000
+
+
 ###test server
-http://localhost:60000
+http://localhost:6000
 
 
 ###
-POST http://localhost:60200/api/users/signup
+POST {{SERVER}}/api/signup
 content-type: application/json
 
 {
-    "firstname": "Khaya",
-    "lastname": "Mbatha",
-    "email": "khayam@gmail.com",
+     "firstname": "Khaya",
+     "lastname": "Khaya",
+    "email": "khbfdvjn@gmail.com",
     "password": "123456"
 }
 
 
 ###
-
-POST http://localhost:60200/api/users/signin
+POST {{SERVER}}/api/signin
 content-type: application/json
 
 {
-    "email":"khayam@gmail.com",
-    "password": "1234567"
+    "email":"khbfdvjn@gmail.com",
+    "password": "123456"
 }
+
+###
+POST {{SERVER}}/api/addAdmin
