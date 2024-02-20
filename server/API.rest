@@ -11,9 +11,9 @@ POST {{SERVER}}/api/users/register
 content-type: application/json
 
 {
-    "firstname": "Khaya",
-    "lastname": "mbatha",
-    "email": "khahjuikyam55@gmail.com",
+    "firstname": "Ka",
+    "lastname": "m",
+    "email": "k000005@gmail.com",
     "password": "123456"
 }
 
@@ -24,7 +24,7 @@ POST {{SERVER}}/api/users/login
 content-type: application/json
 
 {
-    "email":"khayam@gmail.com",
+    "email":"k000005@gmail.com",
     "password": "123456"
 }
 
