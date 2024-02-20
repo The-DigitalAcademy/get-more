@@ -1,0 +1,36 @@
+.logo {
+    font-family: "Kaushan Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--purple);
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 2rem;
+
+  }
+  
+  .logoText {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .slogan {
+    color: var(--gray-50);
+    font-size: 1.5rem;
+    font-weight: 100;
+  }
+
+  .account {
+    font-style: italic;
+    a {
+        font-weight: bold;
+        color: var(--purple);
+        font-style: normal;
+    }
+  }
+
+  .card {
+    background-color: var(--white);
+  }

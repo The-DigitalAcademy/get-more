@@ -1,9 +1,59 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Zeyada&display=swap");
+
 :root {
-  --purple100: #278dfa;
-  --purple50: rgb(227, 226, 226);
+  --purple-50: #9a78f961;
+  --purple: #734de0;
+  --purple-100: #4523a4;
+  --white: #ffffff;
+  --whitesmoke: whitesmoke;
+  --gray: rgb(63, 63, 63);
+  --gray-50: rgb(109, 109, 109);
+  --gray-100: rgb(34, 34, 34);
 }
 
 body {
-  background-color: #eff0f0;
+  background: var(--whitesmoke);
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn-purple {
+  background-color: var(--purple);
+  color: var(--whitesmoke);
+
+  &:hover {
+    background-color: var(--purple-100);
+    color: white;
+  }
+
+}
+
+.btn-purple:disabled,
+.btn-purple[disabled] {
+  border: 1px solid var(--purple);
+  background-color: var(--purple);
+  color: var(--white);
+}
+
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+  border-color: var(--purple);
+  outline: 0 none;
 }

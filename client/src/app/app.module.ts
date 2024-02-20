@@ -1,26 +1,50 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SignupComponent } from 'src/app/pages/signup/signup.component';
-import { TitlePageComponent } from './ui/title-page/title-page.component';
-import { PrivateComponent } from './layout/private/private.component';
-import { LandingPageComponent } from './pages/customer/landing-page/landing-page.component';
-import { ToolBarComponent } from './ui/tool-bar/tool-bar.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { HomeComponent } from './pages/home/home.component';
+import { TabsComponent } from './pages/tabs/tabs.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MytabsComponent } from './ui/mytabs/mytabs.component';
+import { CartComponent } from './pages/cart/cart.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { CategoriesComponent } from './ui/categories/categories.component';
+import { ProductComponent } from './ui/product/product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignupComponent,
-    TitlePageComponent,
-    PrivateComponent,
-    LandingPageComponent,
-    ToolBarComponent,
+    LoginComponent,
+    RegisterComponent,
+    HomeComponent,
+    TabsComponent,
+    MytabsComponent,
+    CartComponent,
+    ProfileComponent,
+    CategoriesComponent,
+    ProductComponent
   ],
-
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      positionClass: 'toast-bottom-center',
+      preventDuplicates: true,
+      progressBar: true,
+      progressAnimation: 'increasing'
+    })
+  ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

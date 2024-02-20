@@ -1,99 +1,74 @@
-const User = require("../model/user");
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
-const list = require("../Database/admin.json");
+const User = require('../model/user')
 
-// register function
-exports.signup = async (req, res, next) => {
-  const { firstname, lastname, email, password } = req.body;
-  if (password.length < 6) {
-    return res.status(400).json({ message: "Password less than 6 characters" });
-  }
-  const user = await User.findOne({ email: req.body.email });
+// REGISTER NEW USER
+const register = async (req, res) => {
+  const { firstname, lastname, email, password } = req.body
 
-  if (user) {
-    res.status(400).json({
-      message: "User exists",
-    });
-  } else {
-    try {
-      await User.create({
-        firstname,
-        lastname,
-        email,
-        password,
-      }).then((user) =>
-        res.status(200).json({
-          message: "User successfully created",
-          user,
-        })
-      );
-    } catch (err) {
-      res.status(401).json({
-        message: "User not successful created",
-        error: err,
-      });
-    }
-  }
-};
 
-// login function
-exports.signin = async (req, res, next) => {
-  const { email, password } = req.body;
-  // Check if username and password is provided
-  if (!email || !password) {
-    return res.status(400).json({
-      message: "All fields are required",
-    });
+  if (!firstname || !lastname || !email || !password) {
+    return res.status(400).json({ message: 'All fields are required' })
   }
+
   try {
-    const user = await User.findOne({ email });
-    if (!user) {
-      res.status(400).json({
-        message: "Login not successful",
-        error: "User not found",
-      });
-    } else {
-      // comparing given password with hashed password
-      bcrypt.compare(password, user.password).then(function (result) {
-        // generate a token
-        const token = jwt.sign(
-          {
-            _id: user._id,
-            email: user.email,
-            firstname: user.firstname,
-            lastname: user.lastname,
-            role: user.role,
-          },
-          process.env.JWT_SECRET,
-          { expiresIn: "6h" }
-        );
 
-        result
-          ? res.status(200).json({
-              message: "Login successful",
-              user,
-              token,
-            })
-          : res.status(400).json({ message: "Login not succesful" });
-      });
+    const userExist = await User.findOne({ email })
+
+    if (userExist) {
+      return res.status(400).json({ message: 'Email already in use' })
     }
-  } catch (error) {
-    res.status(400).json({
-      message: "An error occurred",
-      error: error.message,
-    });
-  }
-};
 
-// adding admin
-exports.addAdmin = async (req, res) => {
-  try {
-    await User.create(list);
+    const newUser = new User({ firstname, lastname, email, password })
+    await newUser.save()
+
     res.status(201).json({
-      message: "User successfully created",
-    });
+      message: `${email} was registered successfully`
+    })
+
+
   } catch (error) {
-    console.log(error.message);
+    console.log(error)
+    res.status(500).json({ message: 'Please try again later' })
   }
-};
+}
+
+
+
+// LOGIN USER
+const login = async (req, res) => {
+  const { email, password } = req.body
+
+  if (!email || !password) {
+    return res.status(400).json({ message: 'All fields are required' })
+  }
+
+  try {
+    const userExist = await User.findOne({ email })
+
+    if (!userExist) {
+      return res.status(400).json({ message: 'Email or Password incorrect' })
+    }
+
+
+
+    if (userExist.password !== password) {
+      return res.status(400).json({ message: 'Email or Password incorrect' })
+    }
+
+    res.status(200).json({
+      message: `Welcome ${userExist.firstname}`,
+      token: '',
+      user: {
+        firstname: userExist.firstname,
+        lastname: userExist.lastname,
+        email: userExist.email,
+        role: userExist.role
+      }
+    })
+
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({ message: 'Please try again later' })
+  }
+}
+
+module.exports = { register, login }

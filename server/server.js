@@ -1,18 +1,20 @@
 require("dotenv").config();
 
 const express = require("express");
-const cors = require("cors");
+const cors = require('cors')
 const app = express();
 const connectDB = require("./Database/db");
-const port = process.env.PORT || 10000;
-
-connectDB();
+const port = process.env.PORT || 50000;
 
 app.use(cors());
+//Connecting the Database
+connectDB();
 
-app.use(express.json());
 
-app.use("/api", require("./Routes/routes"));
+app.use(express.json())
+
+app.use("/api/users/", require("./Routes/userRoutes"));
+
 
 app.get("/", (req, res) => {
   res.json({ message: "Hello from the server" });
@@ -20,10 +22,4 @@ app.get("/", (req, res) => {
 
 app.listen(port, () => {
   console.log(`server is up http://localhost:${port}`);
-});
-
-// Handling Error
-process.on("unhandledRejection", (err) => {
-  console.log(`An error occurred: ${err.message}`);
-  server.close(() => process.exit(1));
 });
