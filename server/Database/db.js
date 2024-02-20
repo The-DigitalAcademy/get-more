@@ -1,13 +1,12 @@
-const Mongoose = require("mongoose");
+const mongoose = require('mongoose')
 
-
-
-const localDB = `mongodb://localhost:27017/Get-More`;
 const connectDB = async () => {
-  await Mongoose.connect(localDB, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
-  console.log("MongoDB Connected");
-};
-module.exports = connectDB;
+  try {
+    await mongoose.connect(process.env.MONGO_URI)
+    console.log('===> DB CONNECTED <===')
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+module.exports = connectDB

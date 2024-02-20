@@ -1,25 +1,30 @@
-###test server
-http://localhost:60000
+@SERVER=http://localhost:6000
 
 
-###
-POST http://localhost:60200/api/users/signup
+### test server
+GET {{SERVER}}
+
+
+
+### REGISTER NEW USER
+POST {{SERVER}}/api/users/register
 content-type: application/json
 
 {
     "firstname": "Khaya",
-    "lastname": "Mbatha",
+    "lastname": "mbatha",
     "email": "khayam@gmail.com",
     "password": "123456"
 }
 
 
-###
 
-POST http://localhost:60200/api/users/signin
+### LOGIN USER
+POST {{SERVER}}/api/users/login
 content-type: application/json
 
 {
     "email":"khayam@gmail.com",
-    "password": "1234567"
+    "password": "123456"
 }
+

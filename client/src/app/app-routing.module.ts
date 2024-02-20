@@ -1,19 +1,38 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SignupComponent } from './pages/signup/signup.component';
-import { PrivateComponent } from './layout/private/private.component';
-import { LoginPageComponent } from './pages/login-page/login-page.component';
-import { LandingPageComponent } from './pages/customer/landing-page/landing-page.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { TabsComponent } from './pages/tabs/tabs.component';
+import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
   {
-    path: 'private',
-    component: PrivateComponent,
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
+  },
+  {
+    path: 'dash',
+    component: TabsComponent,
     children: [
-      { path: 'signin', component: LoginPageComponent },
-      { path: 'signup', component: SignupComponent },
-      { path: 'home', component: LandingPageComponent },
-    ],
+      {
+        path: 'home',
+        component: HomeComponent,
+      },
+      {
+        path: '',
+        redirectTo: 'home',
+        pathMatch: 'full'
+      },
+    ]
+  },
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
   },
 ];
 

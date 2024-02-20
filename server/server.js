@@ -1,26 +1,24 @@
-require('dotenv').config()
+require("dotenv").config();
 
-const express = require('express')
-const cors = require('cors')
-const app = express()
-const connectDB = require('./Database/db')
-const port = process.env.PORT || 60000
+const express = require("express");
+const cors = require("cors");
+const app = express();
+const connectDB = require("./Database/db");
+const port = process.env.PORT || 1000;
 
 //Connecting the Database
-connectDB()
+connectDB();
 
-app.use(cors())
+app.use(cors());
 app.use(express.json())
 
+app.use("/api/users/", require("./Routes/userRoutes"));
 
 
-app.use('/api/users', require('./Routes/routes'))
+app.get("/", (req, res) => {
+  res.json({ message: "Hello from the server" });
+});
 
-
-app.get('', (req, res) => {
-    res.sta
-    tus(200).json({server: 'The derver is up'})
-})
 app.listen(port, () => {
-    console.log(`server is up http://localhost:${port}`)
-})
+  console.log(`server is up http://localhost:${port}`);
+});
