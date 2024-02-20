@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Zeyada&display=swap");
 
 :root {
-  --purple-50: #9a78f9;
+  --purple-50: #9a78f961;
   --purple: #734de0;
   --purple-100: #4523a4;
   --white: #ffffff;
@@ -13,6 +13,10 @@
 
 body {
   background: var(--whitesmoke);
+}
+
+a {
+  text-decoration: none;
 }
 
 .btn-purple {

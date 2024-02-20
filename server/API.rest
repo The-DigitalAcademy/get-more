@@ -1,4 +1,4 @@
-@SERVER=http://localhost:6000
+@SERVER=http://localhost:50000
 
 
 ### test server
@@ -13,7 +13,7 @@ content-type: application/json
 {
     "firstname": "Khaya",
     "lastname": "mbatha",
-    "email": "khayam@gmail.com",
+    "email": "khahjuikyam55@gmail.com",
     "password": "123456"
 }
 

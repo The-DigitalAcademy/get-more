@@ -8,7 +8,7 @@
   <div class="card mt-3 shadow">
     <div class="card-body">
         <div class="display-2">Login</div>
-      <form>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <div class="mb-3 mt-3">
           <label for="exampleInputEmail1" class="form-label"
             >Email address</label
@@ -29,7 +29,7 @@
         </div>
 
         <div class="d-grid">
-            <button type="submit" class="btn btn-purple btn-block">Submit</button>
+            <button type="submit" class="btn btn-purple btn-block" [disabled]="!form.valid">Submit</button>
         </div>
 
         <div class="mt-4 account">Do you need an account? <a routerLink="/register">Register</a></div>
