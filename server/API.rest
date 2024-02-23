@@ -1,10 +1,10 @@
 @SERVER=http://localhost:50000
 
-
 ### test server
 GET {{SERVER}}
 
-
+###admin
+POST {{SERVER}}/api/users/admin
 
 ### REGISTER NEW USER
 POST {{SERVER}}/api/users/register
@@ -16,8 +16,6 @@ content-type: application/json
     "email": "k000005@gmail.com",
     "password": "123456"
 }
-
-
 
 ### LOGIN USER
 POST {{SERVER}}/api/users/login

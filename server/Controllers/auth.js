@@ -1,6 +1,7 @@
 const User = require("../model/user");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const list = require("../database/admin.json");
 
 // REGISTER NEW USER
 const register = async (req, res) => {
@@ -70,6 +71,7 @@ const login = async (req, res) => {
           lastname: userExist.lastname,
           email: userExist.email,
           role: userExist.role,
+          password: password,
         },
       });
     }
@@ -82,4 +84,15 @@ const login = async (req, res) => {
   }
 };
 
-module.exports = { register, login };
+const admin = async (req, res) => {
+  try {
+    await User.create(list);
+    res.status(201).json({
+      message: "User successfully created",
+    });
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
+module.exports = { register, login, admin };

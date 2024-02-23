@@ -19,7 +19,7 @@ export interface UserInterface {
 
 export interface LoginResponseInterface {
   message: string;
-  tokeng: string;
+  token: string;
   user: UserInterface;
 }
 
