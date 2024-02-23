@@ -15,6 +15,8 @@ app.use(express.json())
 
 app.use("/api/users/", require("./Routes/userRoutes"));
 
+app.use("/api/products/", require("./Routes/productsRouts"));
+
 
 app.get("/", (req, res) => {
   res.json({ message: "Hello from the server" });
