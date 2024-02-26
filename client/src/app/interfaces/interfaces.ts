@@ -15,6 +15,7 @@ export interface UserInterface {
   lastname: string;
   email: string;
   role: string;
+  Phonenumber?: string;
 }
 
 export interface LoginResponseInterface {
