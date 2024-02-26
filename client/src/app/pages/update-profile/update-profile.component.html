@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="card mt-3 shadow">
+    <div class="card-body">
+      <div class="display-2">Profile</div>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="mb-3 mt-3">
+          <label for="exampleInputEmail1" class="form-label">First name</label>
+          <input
+            type="text"
+            class="form-control shadow-none"
+            formControlName="firstname"
+
+          />
+        </div>
+        <div class="mb-3 mt-3">
+          <label for="exampleInputEmail1" class="form-label">Last name</label>
+          <input
+            type="text"
+            class="form-control shadow-none"
+            formControlName="lastname"
+          />
+        </div>
+        <div class="mb-3 mt-3">
+          <label for="exampleInputEmail1" class="form-label"
+            >Email address</label
+          >
+          <input
+            type="email"
+            class="form-control shadow-none"
+            formControlName="email"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control shadow-none"
+            formControlName="password"
+          />
+        </div>
+
+        <div class="d-grid">
+          <button
+            type="submit"
+            class="btn btn-purple btn-block"
+            [disabled]="!form.valid"
+          >
+            Submit
+          </button>
+        </div>
+
+        <div class="mt-4 account">
+          Do you have an account? <a routerLink="/login">Login</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

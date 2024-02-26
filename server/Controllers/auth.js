@@ -67,6 +67,7 @@ const login = async (req, res) => {
         message: `Welcome ${userExist.firstname}`,
         token,
         user: {
+          _id: userExist._id,
           firstname: userExist.firstname,
           lastname: userExist.lastname,
           email: userExist.email,
@@ -84,6 +85,7 @@ const login = async (req, res) => {
   }
 };
 
+//add
 const admin = async (req, res) => {
   try {
     await User.create(list);
@@ -95,4 +97,16 @@ const admin = async (req, res) => {
   }
 };
 
-module.exports = { register, login, admin };
+//update profile
+const editProfile = async (req, res) => {
+  try {
+    const profile = await User.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    });
+    res.json(profile);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};
+
+module.exports = { register, login, admin, editProfile };

@@ -26,3 +26,13 @@ content-type: application/json
     "password": "123456"
 }
 
+###
+Put {{SERVER}}/api/users/edit/65d4ace7da9d3312f65fb079
+content-type: application/json
+
+{
+    "firstname": "Ka",
+    "lastname": "m",
+    "email": "k005@gmail.com",
+    "password": "123456"
+}

@@ -8,6 +8,7 @@ import {
   LoginResponseInterface,
   RegisterInterface,
   RegisterResponseInterface,
+  UserInterface,
 } from 'src/app/interfaces/interfaces';
 
 @Injectable({
@@ -40,11 +41,8 @@ export class AuthenticationService {
     localStorage.setItem('user', JSON.stringify(data));
   }
 
-
-  // remove user data from local storage
-  logout() {
-    localStorage.clear();
-    this.user = null;
-    this.router.navigate(['']);
+  //edit profile
+  editProfile(id: string, user: UserInterface): Observable<any> {
+    return this.http.put(`${environment.SERVER_URL}/users/edit/${id}`, user);
   }
 }

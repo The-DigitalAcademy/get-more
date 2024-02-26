@@ -6,6 +6,7 @@ import { TabsComponent } from './pages/tabs/tabs.component';
 import { HomeComponent } from './pages/home/home.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { UpdateProfileComponent } from './pages/update-profile/update-profile.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
       {
         path: 'home',
         component: HomeComponent,
+      },
+      {
+        path:'edit/:id',
+        component: UpdateProfileComponent,
       },
       {
         path: 'cart',
