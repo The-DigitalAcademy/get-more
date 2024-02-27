@@ -13,7 +13,7 @@ content-type: application/json
 {
     "firstname": "Ka",
     "lastname": "m",
-    "email": "k000005@gmail.com",
+    "email": "000005@gmail.com",
     "password": "123456"
 }
 
@@ -22,7 +22,7 @@ POST {{SERVER}}/api/users/login
 content-type: application/json
 
 {
-    "email":"k000005@gmail.com",
+    "email":"000005@gmail.com",
     "password": "123456"
 }
 
@@ -33,6 +33,6 @@ content-type: application/json
 {
     "firstname": "Ka",
     "lastname": "m",
-    "email": "k005@gmail.com",
+    "email": "mpho@gmail.com",
     "password": "123456"
 }

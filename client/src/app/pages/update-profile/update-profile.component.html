@@ -9,7 +9,6 @@
             type="text"
             class="form-control shadow-none"
             formControlName="firstname"
-
           />
         </div>
         <div class="mb-3 mt-3">
@@ -39,11 +38,67 @@
           />
         </div>
         <div class="mb-4">
-          <label for="examplephonenumber" class="form-label">Cell number</label>
+          <label for="examplecontactnumber" class="form-label"
+            >Cell number</label
+          >
           <input
             type="number.."
             class="form-control shadow-none"
-            formControlName="phonenumber"
+            formControlName="contactnumber"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="examplealternativenumber" class="form-label"
+            >Alternative number</label
+          >
+          <input
+            type="number.."
+            class="form-control shadow-none"
+            formControlName="alternativenumber"
+          />
+        </div>
+        <div class="mb-3 mt-3">
+          <label for="exampleInputstreetaddress" class="form-label"
+            >Street address</label
+          >
+          <input
+            type="text"
+            class="form-control shadow-none"
+            formControlName="streetaddress"
+          />
+        </div>
+        <div class="mb-3 mt-3">
+          <label for="exampleInputsuburb" class="form-label">Suburb</label>
+          <input
+            type="text"
+            class="form-control shadow-none"
+            formControlName="suburb"
+          />
+        </div>
+        <div class="mb-3 mt-3">
+          <label for="exampleInputcity" class="form-label">City</label>
+          <input
+            type="text"
+            class="form-control shadow-none"
+            formControlName="city"
+          />
+        </div>
+        <div class="mb-3 mt-3">
+          <label for="exampleInputpostalcode" class="form-label"
+            >Postalcode</label
+          >
+          <input
+            type="text"
+            class="form-control shadow-none"
+            formControlName="postalcode"
+          />
+        </div>
+        <div class="mb-3 mt-3">
+          <label for="exampleInputprovince" class="form-label">Province</label>
+          <input
+            type="text"
+            class="form-control shadow-none"
+            formControlName="province"
           />
         </div>
 
@@ -53,12 +108,8 @@
             class="btn btn-purple btn-block"
             [disabled]="!form.valid"
           >
-            Submit
+            Save
           </button>
-        </div>
-
-        <div class="mt-4 account">
-          Do you have an account? <a routerLink="/login">Login</a>
         </div>
       </form>
     </div>

@@ -72,7 +72,13 @@ const login = async (req, res) => {
           lastname: userExist.lastname,
           email: userExist.email,
           role: userExist.role,
-          password: password,
+          contactnumber: userExist.contactnumber,
+          alternativenumber:userExist.alternativenumber,
+          streetaddress:userExist.streetaddress,
+          suburb:userExist.suburb,
+          city:userExist.city,
+          postalcode:userExist.postalcode,
+          province:userExist.province,
         },
       });
     }
@@ -100,10 +106,25 @@ const admin = async (req, res) => {
 //update profile
 const editProfile = async (req, res) => {
   try {
-    const profile = await User.findByIdAndUpdate(req.params.id, req.body, {
+    const userExist = await User.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
     });
-    res.json(profile);
+    res.status(200).json({
+      user: {
+        _id: userExist._id,
+        firstname: userExist.firstname,
+        lastname: userExist.lastname,
+        email: userExist.email,
+        role: userExist.role,
+        contactnumber: userExist.contactnumber,
+        alternativenumber:userExist.alternativenumber,
+        streetaddress:userExist.streetaddress,
+        suburb:userExist.suburb,
+        city:userExist.city,
+        postalcode:userExist.postalcode,
+        province:userExist.province,
+      },
+    });
   } catch (error) {
     res.status(400).json({ error: error.message });
   }

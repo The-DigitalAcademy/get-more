@@ -3,7 +3,14 @@
   <p>Firstname: {{ user.user.firstname }}</p>
   <p>Lastname: {{ user.user.lastname }}</p>
   <p>Email: {{ user.user.email }}</p>
-  <p type="password">Password: {{ user.user.password }}</p>
+  <p>Cell number: {{ user.user.contactnumber }}</p>
+  <p>Alternativenumber: {{ user.user.alternativenumber }}</p>
+  <p>Streetaddress: {{ user.user.streetaddress }}</p>
+  <p>Suburb: {{ user.user.suburb }}</p>
+  <p>City: {{ user.user.city }}</p>
+  <p>Postalcode: {{ user.user.postalcode }}</p>
+  <p>Province: {{ user.user.province }}</p>
 </div>
 <button type="button" class="btn" (click)="edit(user.user._id)">Edit</button>
+
 <button type="button" class="btn" (click)="logout()">Logout</button>

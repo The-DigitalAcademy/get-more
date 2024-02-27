@@ -19,6 +19,34 @@ const UserSchema = new Mongoose.Schema({
     minlength: 6,
     required: true,
   },
+  contactnumber: {
+    type: String,
+    unique: true,
+  },
+  alternativenumber: {
+    type: String,
+    unique: true,
+  },
+  streetaddress: {
+    type: String,
+    unique: true,
+  },
+  suburb: {
+    type: String,
+    unique: true,
+  },
+  city: {
+    type: String,
+    unique: true,
+  },
+  postalcode: {
+    type: String,
+    unique: true,
+  },
+  province: {
+    type: String,
+    unique: true,
+  },
   role: {
     type: String,
     default: "customer",

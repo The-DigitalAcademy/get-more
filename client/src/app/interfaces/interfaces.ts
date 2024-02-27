@@ -15,7 +15,13 @@ export interface UserInterface {
   lastname: string;
   email: string;
   role: string;
-  Phonenumber?: string;
+  contactnumber: string;
+  alternativenumber: string;
+  streetaddress: string;
+  suburb: string;
+  city: string;
+  postalcode: string;
+  province: string;
 }
 
 export interface LoginResponseInterface {
