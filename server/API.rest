@@ -58,8 +58,12 @@ content-type: application/json
 GET  {{SERVER}}/api/users/categories
 content-type: application/json
 
+
+
 ###admin
 POST {{SERVER}}/api/users/admin
+
+
 
 ### REGISTER NEW USER
 POST {{SERVER}}/api/users/register
@@ -72,6 +76,8 @@ content-type: application/json
     "password": "123456"
 }
 
+
+
 ### LOGIN USER
 POST {{SERVER}}/api/users/login
 content-type: application/json
@@ -81,7 +87,9 @@ content-type: application/json
     "password": "123456"
 }
 
-###
+
+
+###update profile
 Put {{SERVER}}/api/users/edit/65d4ace7da9d3312f65fb079
 content-type: application/json
 
