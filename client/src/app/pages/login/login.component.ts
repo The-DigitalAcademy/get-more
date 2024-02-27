@@ -7,7 +7,7 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
   form = this.fb.nonNullable.group({
@@ -24,14 +24,14 @@ export class LoginComponent {
 
   onSubmit() {
     this.auth.login(this.form.getRawValue()).subscribe(
-      (res) => {
-        this.alertService.success(res.message);
+      (data: any) => {
+        this.auth.setUserData(data);
+        this.alertService.success(data.message);
         this.router.navigate(['/dash']);
       },
-      (error) =>
-        {
-          this.alertService.error(error.error.message)
-        }
+      (error) => {
+        this.alertService.error(error.error.message);
+      }
     );
   }
 }

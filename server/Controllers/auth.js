@@ -1,6 +1,7 @@
 const User = require("../model/user");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const list = require("../database/admin.json");
 
 // REGISTER NEW USER
 const register = async (req, res) => {
@@ -66,10 +67,18 @@ const login = async (req, res) => {
         message: `Welcome ${userExist.firstname}`,
         token,
         user: {
+          _id: userExist._id,
           firstname: userExist.firstname,
           lastname: userExist.lastname,
           email: userExist.email,
           role: userExist.role,
+          contactnumber: userExist.contactnumber,
+          alternativenumber:userExist.alternativenumber,
+          streetaddress:userExist.streetaddress,
+          suburb:userExist.suburb,
+          city:userExist.city,
+          postalcode:userExist.postalcode,
+          province:userExist.province,
         },
       });
     }
@@ -82,4 +91,43 @@ const login = async (req, res) => {
   }
 };
 
-module.exports = { register, login };
+//add
+const admin = async (req, res) => {
+  try {
+    await User.create(list);
+    res.status(201).json({
+      message: "User successfully created",
+    });
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
+//update profile
+const editProfile = async (req, res) => {
+  try {
+    const userExist = await User.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    });
+    res.status(200).json({
+      user: {
+        _id: userExist._id,
+        firstname: userExist.firstname,
+        lastname: userExist.lastname,
+        email: userExist.email,
+        role: userExist.role,
+        contactnumber: userExist.contactnumber,
+        alternativenumber:userExist.alternativenumber,
+        streetaddress:userExist.streetaddress,
+        suburb:userExist.suburb,
+        city:userExist.city,
+        postalcode:userExist.postalcode,
+        province:userExist.province,
+      },
+    });
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};
+
+module.exports = { register, login, admin, editProfile };
