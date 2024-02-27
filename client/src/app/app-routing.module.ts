@@ -7,6 +7,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { UpdateProfileComponent } from './pages/update-profile/update-profile.component';
+import { AdminPageComponent } from './pages/admin/admin/admin-page/admin-page.component';
 
 const routes: Routes = [
   {
@@ -26,7 +27,7 @@ const routes: Routes = [
         component: HomeComponent,
       },
       {
-        path:'edit/:id',
+        path: 'edit/:id',
         component: UpdateProfileComponent,
       },
       {
@@ -38,16 +39,20 @@ const routes: Routes = [
         component: ProfileComponent,
       },
       {
+        path: 'admin',
+        component: AdminPageComponent,
+      },
+      {
         path: '',
         redirectTo: 'home',
-        pathMatch: 'full'
+        pathMatch: 'full',
       },
-    ]
+    ],
   },
   {
     path: '',
     redirectTo: 'login',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
 ];
 
