@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
 import {
@@ -7,14 +8,18 @@ import {
   LoginResponseInterface,
   RegisterInterface,
   RegisterResponseInterface,
-} from 'src/interfaces';
+  UserInterface,
+} from 'src/app/interfaces/interfaces';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthenticationService {
-  constructor(private http: HttpClient) {}
+  user: LoginResponseInterface | null = null;
 
+  constructor(private http: HttpClient, private router: Router) {}
+
+  // register function
   register(user: RegisterInterface): Observable<RegisterResponseInterface> {
     return this.http.post<RegisterResponseInterface>(
       `${environment.SERVER_URL}/users/register`,
@@ -22,10 +27,22 @@ export class AuthenticationService {
     );
   }
 
+  // login function
   login(user: LoginInterface): Observable<LoginResponseInterface> {
     return this.http.post<LoginResponseInterface>(
       `${environment.SERVER_URL}/users/login`,
       user
     );
+  }
+
+  // save user data to local storage
+  setUserData(data: LoginResponseInterface) {
+    this.user = data;
+    localStorage.setItem('user', JSON.stringify(data));
+  }
+
+  //edit profile
+  editProfile(id: string, user: UserInterface): Observable<any> {
+    return this.http.put(`${environment.SERVER_URL}/users/edit/${id}`, user);
   }
 }

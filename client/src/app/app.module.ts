@@ -16,6 +16,7 @@ import { CartComponent } from './pages/cart/cart.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { CategoriesComponent } from './ui/categories/categories.component';
 import { ProductComponent } from './ui/product/product.component';
+import { UpdateProfileComponent } from './pages/update-profile/update-profile.component';
 import { AddProductComponent } from './pages/add-product/add-product.component';
 
 @NgModule({
@@ -30,6 +31,7 @@ import { AddProductComponent } from './pages/add-product/add-product.component';
     ProfileComponent,
     CategoriesComponent,
     ProductComponent,
+    UpdateProfileComponent,
     AddProductComponent
   ],
   imports: [

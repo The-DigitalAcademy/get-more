@@ -1,0 +1,117 @@
+<div class="container">
+  <div class="card mt-3 shadow">
+    <div class="card-body">
+      <div class="display-2">Profile</div>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="mb-3 mt-3">
+          <label for="exampleInputEmail1" class="form-label">First name</label>
+          <input
+            type="text"
+            class="form-control shadow-none"
+            formControlName="firstname"
+          />
+        </div>
+        <div class="mb-3 mt-3">
+          <label for="exampleInputEmail1" class="form-label">Last name</label>
+          <input
+            type="text"
+            class="form-control shadow-none"
+            formControlName="lastname"
+          />
+        </div>
+        <div class="mb-3 mt-3">
+          <label for="exampleInputEmail1" class="form-label"
+            >Email address</label
+          >
+          <input
+            type="email"
+            class="form-control shadow-none"
+            formControlName="email"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control shadow-none"
+            formControlName="password"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="examplecontactnumber" class="form-label"
+            >Cell number</label
+          >
+          <input
+            type="number.."
+            class="form-control shadow-none"
+            formControlName="contactnumber"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="examplealternativenumber" class="form-label"
+            >Alternative number</label
+          >
+          <input
+            type="number.."
+            class="form-control shadow-none"
+            formControlName="alternativenumber"
+          />
+        </div>
+        <div class="mb-3 mt-3">
+          <label for="exampleInputstreetaddress" class="form-label"
+            >Street address</label
+          >
+          <input
+            type="text"
+            class="form-control shadow-none"
+            formControlName="streetaddress"
+          />
+        </div>
+        <div class="mb-3 mt-3">
+          <label for="exampleInputsuburb" class="form-label">Suburb</label>
+          <input
+            type="text"
+            class="form-control shadow-none"
+            formControlName="suburb"
+          />
+        </div>
+        <div class="mb-3 mt-3">
+          <label for="exampleInputcity" class="form-label">City</label>
+          <input
+            type="text"
+            class="form-control shadow-none"
+            formControlName="city"
+          />
+        </div>
+        <div class="mb-3 mt-3">
+          <label for="exampleInputpostalcode" class="form-label"
+            >Postalcode</label
+          >
+          <input
+            type="text"
+            class="form-control shadow-none"
+            formControlName="postalcode"
+          />
+        </div>
+        <div class="mb-3 mt-3">
+          <label for="exampleInputprovince" class="form-label">Province</label>
+          <input
+            type="text"
+            class="form-control shadow-none"
+            formControlName="province"
+          />
+        </div>
+
+        <div class="d-grid">
+          <button
+            type="submit"
+            class="btn btn-purple btn-block"
+            [disabled]="!form.valid"
+          >
+            Save
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

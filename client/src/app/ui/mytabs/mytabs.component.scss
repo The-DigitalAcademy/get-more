@@ -16,7 +16,7 @@
     background-color: var(--purple);
     color: var(--whitesmoke);
     cursor: pointer;
-    padding: .2rem 0;
+    padding: 0.2rem 0;
 
     i {
       font-size: 1.6rem;
@@ -32,3 +32,11 @@
   background-color: var(--purple-100) !important;
   color: var(--white) !important;
 }
+
+.btn {
+  border: none;
+  outline: none;
+  color: var(--purple100);
+ 
+}
+

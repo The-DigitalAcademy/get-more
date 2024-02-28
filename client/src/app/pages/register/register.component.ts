@@ -32,10 +32,9 @@ export class RegisterComponent {
           this.router.navigate(['/login']);
         }, 3000);
       },
-      (error) =>
-        {
-          this.alertService.error(error.error.message)
-        }
+      (error) => {
+        this.alertService.error(error.error.message);
+      }
     );
   }
 }

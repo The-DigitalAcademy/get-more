@@ -15,11 +15,18 @@ export interface UserInterface {
   lastname: string;
   email: string;
   role: string;
+  contactnumber: string;
+  alternativenumber: string;
+  streetaddress: string;
+  suburb: string;
+  city: string;
+  postalcode: string;
+  province: string;
 }
 
 export interface LoginResponseInterface {
   message: string;
-  tokeng: string;
+  token: string;
   user: UserInterface;
 }
 

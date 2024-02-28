@@ -1,7 +1,6 @@
 @SERVER=http://localhost:50000
 
 
-
 ### test server
 GET {{SERVER}}
 
@@ -34,14 +33,46 @@ content-type: application/json
 
 
 
+### Add products
+POST  {{SERVER}}/api/products/create
+content-type: application/json
+
+{
+    "image": "https://www.google.com/imgres?imgurl=https%3A%2F%2Fshop-beauty.dior.co.za%2Fcdn%2Fshop%2Fproducts%2FY0996347_C099600764_E01_GHC_en_INT_2_1200x1200.jpg%3Fv%3D1706872369&tbnid=16BlxnXLNdvzdM&vet=12ahUKEwiL1f3g78CEAxW3eqQEHdLYD2cQMygBegUIARDtAQ..i&imgrefurl=https%3A%2F%2Fshop-beauty.dior.co.za%2Fproducts%2Fmiss-dior-eau-de-parfum&docid=OdaUQBc24lNZ8M&w=1110&h=1200&q=parfum&ved=2ahUKEwiL1f3g78CEAxW3eqQEHdLYD2cQMygBegUIARDtAQ",
+    "name": "Oh so heavenly",
+    "price": "650.00",
+    "description": "Avon Atraction for her Eau De Perfume- 50ml",
+    "category": "Cologne",
+    "quantity": "20"
+}
+
+
+
+### Get single product
+GET  {{SERVER}}/api/users/products/4
+content-type: application/json
+
+
+
+### Get categories
+GET  {{SERVER}}/api/users/categories
+content-type: application/json
+
+
+
+###admin
+POST {{SERVER}}/api/users/admin
+
+
+
 ### REGISTER NEW USER
 POST {{SERVER}}/api/users/register
 content-type: application/json
 
 {
-    "firstname": "Khaya",
-    "lastname": "mbatha",
-    "email": "khahjuikyam55@gmail.com",
+    "firstname": "Ka",
+    "lastname": "m",
+    "email": "000005@gmail.com",
     "password": "123456"
 }
 
@@ -52,7 +83,19 @@ POST {{SERVER}}/api/users/login
 content-type: application/json
 
 {
-    "email":"khayam@gmail.com",
+    "email":"000005@gmail.com",
     "password": "123456"
 }
 
+
+
+###update profile
+Put {{SERVER}}/api/users/edit/65d4ace7da9d3312f65fb079
+content-type: application/json
+
+{
+    "firstname": "Ka",
+    "lastname": "m",
+    "email": "mpho@gmail.com",
+    "password": "123456"
+}
