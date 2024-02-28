@@ -17,7 +17,11 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { CategoriesComponent } from './ui/categories/categories.component';
 import { ProductComponent } from './ui/product/product.component';
 import { UpdateProfileComponent } from './pages/update-profile/update-profile.component';
+
 import { AdminPageComponent } from './pages/admin/admin/admin-page/admin-page.component';
+
+import { AddProductComponent } from './pages/add-product/add-product.component';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +36,11 @@ import { AdminPageComponent } from './pages/admin/admin/admin-page/admin-page.co
     CategoriesComponent,
     ProductComponent,
     UpdateProfileComponent,
+
     AdminPageComponent
+
+    AddProductComponent
+
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,76 @@
+<div class="container">
+
+    <div class="logoText">
+        <div class="logo">Timeless Aromas</div>
+    </div>
+
+  <div class="card mt-3 shadow">
+    <div class="card-body">
+        <div class="display-2">addProduct</div>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="mb-3 mt-3">
+          <label for="exampleInputEmail1" class="form-label"
+            >image</label
+          >
+          <input
+            type="file"
+            class="form-control shadow-none"
+            formControlName="image"
+          />
+        </div>
+        <div class="mb-3 mt-3">
+          <label for="exampleInputEmail1" class="form-label"
+            >name</label
+          >
+          <input
+            type="text"
+            class="form-control shadow-none"
+            formControlName="name"
+          />
+        </div>
+        <div class="mb-3 mt-3">
+          <label for="exampleInputEmail1" class="form-label"
+            >price</label
+          >
+          <input
+            type="number"
+            class="form-control shadow-none"
+            formControlName="price"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="exampleInputPassword1" class="form-label">description</label>
+          <input
+            type="text"
+            class="form-control shadow-none"
+            formControlName="description"
+          />
+        </div>
+
+        <div class="mb-4">
+            <label for="exampleInputPassword1" class="form-label">category</label>
+            <input
+              type="text"
+              class="form-control shadow-none"
+              formControlName="category"
+            />
+          </div>
+
+          <div class="mb-4">
+            <label for="exampleInputPassword1" class="form-label">quantity</label>
+            <input
+              type="number"
+              class="form-control shadow-none"
+              formControlName="quantity"
+            />
+          </div>
+
+        <div class="d-grid">
+            <button type="submit" class="btn btn-purple btn-block" [disabled]="!form.valid">Submit</button>
+        </div>
+
+        
+      </form>
+    </div>
+  </div>
+</div>
