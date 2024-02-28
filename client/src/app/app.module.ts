@@ -17,6 +17,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { CategoriesComponent } from './ui/categories/categories.component';
 import { ProductComponent } from './ui/product/product.component';
 import { UpdateProfileComponent } from './pages/update-profile/update-profile.component';
+import { AddProductComponent } from './pages/add-product/add-product.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { UpdateProfileComponent } from './pages/update-profile/update-profile.co
     ProfileComponent,
     CategoriesComponent,
     ProductComponent,
-    UpdateProfileComponent
+    UpdateProfileComponent,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,
