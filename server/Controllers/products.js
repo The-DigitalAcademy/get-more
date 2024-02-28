@@ -21,7 +21,7 @@ exports.addProduct = async (req, res) => {
     await newProduct.save()
 
     res.status(201).json({
-      message: `product succesfully created`
+      message: `product succesfully created`,
     })
 
 

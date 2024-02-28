@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertService } from 'src/app/services/alert.service';
 import { AddproductService } from 'src/app/services/addproduct.service';
-import { AuthenticationService } from 'src/app/services/authentication.service';
+
 @Component({
   selector: 'app-add-product',
   templateUrl: './add-product.component.html',
@@ -11,7 +11,7 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 })
 export class AddProductComponent {
   form = this.fb.nonNullable.group({
-    Image: ['', Validators.required],
+    image: ['', Validators.required],
     name: ['', Validators.required],
     price: ['', Validators.required],
     description: ['', Validators.required],
@@ -27,19 +27,21 @@ export class AddProductComponent {
   ) {}
 
 onSubmit() {
-  
-  this.product.Addproduct(this.form.getRawValue()).subscribe()
-    .then((res: { message: string; }) => {
+  this.product.addProductFunc(this.form.getRawValue()).subscribe(
+    (res) => {
       this.alertService.success(res.message);
       setTimeout(() => {
+        this.router.navigate(['/dash/admin']);
       }, 3000);
     },
-    (error: { error: { message: string; }; }) =>
-      {
-        this.alertService.error(error.error.message)
-      }
+    (error) => {
+      this.alertService.error(error.error.message);
+    }
   );
 }
 }
+
+
+
 
 
