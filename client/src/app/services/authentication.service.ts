@@ -19,6 +19,9 @@ export class AuthenticationService {
 
   constructor(private http: HttpClient, private router: Router) {}
 
+
+  
+
   // register function
   register(user: RegisterInterface): Observable<RegisterResponseInterface> {
     return this.http.post<RegisterResponseInterface>(
@@ -26,6 +29,8 @@ export class AuthenticationService {
       user
     );
   }
+
+  
 
   // login function
   login(user: LoginInterface): Observable<LoginResponseInterface> {
@@ -35,11 +40,26 @@ export class AuthenticationService {
     );
   }
 
+
+
+
   // save user data to local storage
   setUserData(data: LoginResponseInterface) {
     this.user = data;
     localStorage.setItem('user', JSON.stringify(data));
   }
+
+
+
+    // get user data from local storage
+    getUserData() {
+      if (localStorage.getItem('user')) {
+        this.user = JSON.parse(localStorage.getItem('user') || '');
+      }
+      return this.user;
+    }
+
+
 
   //edit profile
   editProfile(id: string, user: UserInterface): Observable<any> {

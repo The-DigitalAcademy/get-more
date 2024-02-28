@@ -25,9 +25,13 @@ export class LoginComponent {
   onSubmit() {
     this.auth.login(this.form.getRawValue()).subscribe(
       (data: any) => {
-        this.auth.setUserData(data);
-        this.alertService.success(data.message);
-        this.router.navigate(['/dash']);
+        if (data.role === 'admin') {
+          this.auth.setUserData(data);
+          this.alertService.success(data.message);
+          this.router.navigate(['/dash/admin']);
+        } else {
+          this.router.navigate(['/dash']);
+        }
       },
       (error) => {
         this.alertService.error(error.error.message);
