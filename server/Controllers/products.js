@@ -1,4 +1,3 @@
-
 const Product = require('../model/products')
 
 exports.addProduct = async (req, res) => {
@@ -28,5 +27,20 @@ exports.addProduct = async (req, res) => {
   } catch (error) {
     console.log(error)
     res.status(500).json({ message: 'Please try again later' })
+  }
+}
+
+
+
+
+
+exports.getAllProducts = async (req, res) => {
+  try {
+    const products = await Product.find();
+
+    res.status(200).json(products);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ msg: "Couldn't retrieve all product", error });
   }
 }
