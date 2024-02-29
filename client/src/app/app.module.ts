@@ -20,7 +20,7 @@ import { CategoriesComponent } from './ui/categories/categories.component';
 import { ProductComponent } from './ui/product/product.component';
 import { UpdateProfileComponent } from './pages/update-profile/update-profile.component';
 import { AdminPageComponent } from './pages/admin/admin/admin-page/admin-page.component';
-import { AddProductComponent } from './pages/add-product/add-product.component';
+import { AddProductComponent } from './pages/admin/add-product/add-product.component';
 import { ViewPageComponent } from './pages/view-page/view-page.component';
 
 @NgModule({
