@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs'; // Correcting 'observable' to 'Observable'
-import { addproductInterface, addproductResponseInterface } from 'src/app/interfaces/interfaces'; // Correcting 'addproductInterface' to 'AddproductInterface'
+import { addproductInterface, addproductResponseInterface } from 'src/app/interfaces/productinterfaces'; // Correcting 'addproductInterface' to 'AddproductInterface'
 import { environment } from 'src/environments/environment';
 
 
@@ -21,6 +21,12 @@ export class AddproductService {
       products
     ); // Adding missing products parameter and fixing template literals
   }
+
+ // get single product
+ getSingleproduct(id: string): Observable<addproductResponseInterface> {
+  return this.http.get<addproductResponseInterface>(`${environment.SERVER_URL}/products/single/${id}`);
+}
+
 }
 
 
