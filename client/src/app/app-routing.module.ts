@@ -10,7 +10,8 @@ import { UpdateProfileComponent } from './pages/update-profile/update-profile.co
 
 import { AdminPageComponent } from './pages/admin/admin/admin-page/admin-page.component';
 
-import { AddProductComponent } from './pages/add-product/add-product.component';
+import { AddProductComponent } from './pages/admin/add-product/add-product.component';
+import { ViewPageComponent } from './pages/view-page/view-page.component';
 
 
 const routes: Routes = [
@@ -49,6 +50,10 @@ const routes: Routes = [
       {
         path: 'admin',
         component: AdminPageComponent,
+      },
+      {
+        path: 'view',
+        component: ViewPageComponent,
       },
       {
         path: '',
