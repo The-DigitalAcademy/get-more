@@ -44,3 +44,21 @@ exports.getAllProducts = async (req, res) => {
     res.status(500).json({ msg: "Couldn't retrieve all product", error });
   }
 }
+
+
+
+// get single
+exports.getSingle = async (req, res) => {
+  const { id } = req.params;
+
+  if (!id) {
+    return res.json({ message: "User id do not exits" });
+  }
+
+  try {
+    const candidate = await Product.findById(id);
+    res.json(candidate);
+  } catch (error) {
+    res.json({ message: "Something went wrong, try again later" });
+  }
+};
