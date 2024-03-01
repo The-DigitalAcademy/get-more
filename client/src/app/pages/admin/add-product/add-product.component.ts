@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertService } from 'src/app/services/alert.service';
-import { AddproductService } from 'src/app/services/addproduct.service';
+import { AddproductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-add-product',
