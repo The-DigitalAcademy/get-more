@@ -21,8 +21,15 @@ content-type: application/json
 
 
 
-### Get allproduct
+### Get all product
 GET  {{SERVER}}/api/products/all
+content-type: application/json
+
+
+
+
+### Get one product
+GET  {{SERVER}}/api/products/single/65dee021b72fb36a2cb9ffb1
 content-type: application/json
 
 
