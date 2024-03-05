@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertService } from 'src/app/services/alert.service';
-import { AddproductService } from 'src/app/services/addproduct.service';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-add-product',
@@ -19,22 +19,24 @@ export class AddProductComponent {
     quantity: ['', Validators.required],
   });
 
+  
+
   constructor(
     private fb: FormBuilder,
     private alertService: AlertService,
     private router: Router,
-    private product: AddproductService
+    private product: ProductService
   ) {}
 
 onSubmit() {
   this.product.addProductFunc(this.form.getRawValue()).subscribe(
-    (res) => {
+    (res: any) => {
       this.alertService.success(res.message);
       setTimeout(() => {
         this.router.navigate(['/dash/admin']);
       }, 3000);
     },
-    (error) => {
+    (error: any) => {
       this.alertService.error(error.error.message);
     }
   );

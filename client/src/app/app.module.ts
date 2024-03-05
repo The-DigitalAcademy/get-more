@@ -18,6 +18,8 @@ import { CategoriesComponent } from './ui/categories/categories.component';
 import { ProductComponent } from './ui/product/product.component';
 import { UpdateProfileComponent } from './pages/update-profile/update-profile.component';
 import { AddProductComponent } from './pages/add-product/add-product.component';
+import { CommonModule } from '@angular/common';
+import { AllProductComponent } from './pages/all-product/all-product.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { AddProductComponent } from './pages/add-product/add-product.component';
     CategoriesComponent,
     ProductComponent,
     UpdateProfileComponent,
-    AddProductComponent
+    AddProductComponent,
+    AllProductComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +43,7 @@ import { AddProductComponent } from './pages/add-product/add-product.component';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    CommonModule,
     ToastrModule.forRoot({
       timeOut: 3000,
       positionClass: 'toast-bottom-center',

@@ -8,6 +8,7 @@ import { CartComponent } from './pages/cart/cart.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { UpdateProfileComponent } from './pages/update-profile/update-profile.component';
 import { AddProductComponent } from './pages/add-product/add-product.component';
+import { AllProductComponent } from './pages/all-product/all-product.component';
 
 const routes: Routes = [
   {
@@ -34,6 +35,10 @@ const routes: Routes = [
         path: 'addproduct',
         component: AddProductComponent
       },
+    {
+      path: 'all-product',
+      component: AllProductComponent
+    },
       {
         path: 'cart',
         component: CartComponent,
