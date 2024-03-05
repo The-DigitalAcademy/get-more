@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertService } from 'src/app/services/alert.service';
-import { ProductService } from 'src/app/services/product.service';
+import { AllproductService } from 'src/app/services/allproduct.service';
+import { AddproductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-all-product',
@@ -26,18 +27,19 @@ export class AllProductComponent implements OnInit {
     private fb: FormBuilder,
     private alertService: AlertService,
     private router: Router,
-    private productService: ProductService
+    private addproductService: AddproductService,
+    private allproductService: AllproductService
   ) {}
 
   ngOnInit(): void {
-    this.productService.getAllProductsFunc().subscribe((data: any) => {
-      this.products = data;
-      console.log(this.products); 
-    });
+    // this.allproductService.getAllProductsFunc().subscribe((data: any) => {
+    //   this.products = data;
+    //   console.log(this.products); 
+    // });
   }
 
   onSubmit() {
-    this.productService.addProductFunc(this.form.getRawValue()).subscribe(
+    this.addproductService.addProductFunc(this.form.getRawValue()).subscribe(
       (res) => {
         this.alertService.success(res.message);
         setTimeout(() => {

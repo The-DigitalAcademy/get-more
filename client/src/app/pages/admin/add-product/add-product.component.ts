@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertService } from 'src/app/services/alert.service';
-import { ProductService } from 'src/app/services/product.service';
+import { AddproductService } from 'src/app/services/product.service';
+
 
 @Component({
   selector: 'app-add-product',
@@ -25,11 +26,11 @@ export class AddProductComponent {
     private fb: FormBuilder,
     private alertService: AlertService,
     private router: Router,
-    private product: ProductService
+    private addproductService: AddproductService
   ) {}
 
 onSubmit() {
-  this.product.addProductFunc(this.form.getRawValue()).subscribe(
+  this.addproductService.addProductFunc(this.form.getRawValue()).subscribe(
     (res: any) => {
       this.alertService.success(res.message);
       setTimeout(() => {

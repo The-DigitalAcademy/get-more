@@ -7,8 +7,15 @@ import { HomeComponent } from './pages/home/home.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { UpdateProfileComponent } from './pages/update-profile/update-profile.component';
-import { AddProductComponent } from './pages/add-product/add-product.component';
+
+import { AdminPageComponent } from './pages/admin/admin-page/admin-page.component';
+
+
+import { ViewPageComponent } from './pages/view-page/view-page.component';
+
+
 import { AllProductComponent } from './pages/all-product/all-product.component';
+import { AddProductComponent } from './pages/admin/add-product/add-product.component';
 
 const routes: Routes = [
   {
@@ -28,7 +35,7 @@ const routes: Routes = [
         component: HomeComponent,
       },
       {
-        path:'edit/:id',
+        path: 'edit/:id',
         component: UpdateProfileComponent,
       },
       {
@@ -48,16 +55,24 @@ const routes: Routes = [
         component: ProfileComponent,
       },
       {
+        path: 'admin',
+        component: AdminPageComponent,
+      },
+      {
+        path: 'view',
+        component: ViewPageComponent,
+      },
+      {
         path: '',
         redirectTo: 'home',
-        pathMatch: 'full'
+        pathMatch: 'full',
       },
-    ]
+    ],
   },
   {
     path: '',
     redirectTo: 'login',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
 ];
 
