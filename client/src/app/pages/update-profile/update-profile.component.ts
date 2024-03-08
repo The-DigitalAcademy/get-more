@@ -27,6 +27,7 @@ export class UpdateProfileComponent implements OnInit {
 
   id: any;
   user: any;
+userform: any;
 
   constructor(
     private router: Router,

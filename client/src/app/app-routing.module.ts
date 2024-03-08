@@ -16,6 +16,7 @@ import { ViewPageComponent } from './pages/view-page/view-page.component';
 
 import { AllProductComponent } from './pages/all-product/all-product.component';
 import { AddProductComponent } from './pages/admin/add-product/add-product.component';
+import { SingleProductComponent } from './pages/single-product/single-product.component';
 
 const routes: Routes = [
   {
@@ -46,7 +47,11 @@ const routes: Routes = [
       path: 'all-product',
       component: AllProductComponent
     },
-      {
+    {
+      path: 'single-product/:id',
+      component: SingleProductComponent
+    },
+    {
         path: 'cart',
         component: CartComponent,
       },
