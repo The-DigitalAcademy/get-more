@@ -19,7 +19,7 @@ content-type: application/json
     "quantity": "20"
 }
 
-
+  
 
 ### Get all product
 GET  {{SERVER}}/api/products/all
@@ -29,7 +29,7 @@ content-type: application/json
 
 
 ### Get one product
-GET  {{SERVER}}/api/products/single/65dee021b72fb36a2cb9ffb1
+GET  {{SERVER}}/api/products/single/65e6bcf14d214acb5dd73c30
 content-type: application/json
 
 
@@ -44,9 +44,9 @@ POST {{SERVER}}/api/users/register
 content-type: application/json
 
 {
-    "firstname": "Ka",
-    "lastname": "m",
-    "email": "000005@gmail.com",
+    "firstname": "edson",
+    "lastname": "chauke",
+    "email": "chauke@gmail.com",
     "password": "123456"
 }
 
@@ -57,7 +57,7 @@ POST {{SERVER}}/api/users/login
 content-type: application/json
 
 {
-    "email":"000005@gmail.com",
+    "email":"chauke@gmail.com",
     "password": "123456"
 }
 

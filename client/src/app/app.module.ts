@@ -39,10 +39,10 @@ import { AdminPageComponent } from './pages/admin/admin-page/admin-page.componen
     CategoriesComponent,
     ProductComponent,
     UpdateProfileComponent,
-    AddProductComponent,
-    AllProductComponent
+    AdminPageComponent,
     ViewPageComponent,
-    AdminPageComponent
+    AllProductComponent,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,

@@ -1,32 +1,32 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs'; // Correcting 'observable' to 'Observable'
-import { addproductInterface, addproductResponseInterface } from 'src/app/interfaces/productinterfaces'; // Correcting 'addproductInterface' to 'AddproductInterface'
 import { environment } from 'src/environments/environment';
-
+import { addproductInterface } from '../interfaces/interfaces';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AddproductService {
-
+export class ProductService {
   constructor(private http: HttpClient) {}
 
-  addProductFunc(
-    products: addproductInterface
-  ): Observable<addproductResponseInterface> {
-    // Fixing function parameters
-    return this.http.post<addproductResponseInterface>(
-      `${environment.SERVER_URL}/products/create`,
-      products
-    ); // Adding missing products parameter and fixing template literals
+  // get all products
+  getAllProductsFunc( ): Observable<any> {
+    return this.http.get<any>(`${environment.SERVER_URL}/products/all`);
   }
 
- // get single product
- getSingleproduct(id: string): Observable<addproductResponseInterface> {
-  return this.http.get<addproductResponseInterface>(`${environment.SERVER_URL}/products/single/${id}`);
-}
+
+  // add a product
+  addProductFunc(products: addproductInterface): Observable<any> {
+    return this.http.post<any>(`${environment.SERVER_URL}/products/all`, products);
+  }
+
+  
+  // get single product
+  getSingleproduct(id: string): Observable<any> {
+    return this.http.get<any>(`${environment.SERVER_URL}/products/single/${id}`);
+  }
+
+
 
 }
-
-
