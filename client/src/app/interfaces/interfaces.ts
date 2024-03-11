@@ -60,3 +60,26 @@ export interface allproductInterface {
 export interface allproductResponseInterface {
   message: string;
 }
+
+
+////cart
+export interface cart{
+  name:string,
+  price:number,
+  category:string,
+  color:string,
+  image:string,
+  description:string,
+  id:number| undefined,
+  quantity:undefined | number,
+  productId:number,
+  userId:number
+}
+
+export interface priceSummary{
+  price:number,
+  discount:number,
+  tax:number,
+  delivery:number,
+  total:number
+}
