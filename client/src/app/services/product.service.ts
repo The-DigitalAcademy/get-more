@@ -21,7 +21,7 @@ export class ProductService {
 
   // add a product
   addProductFunc(products: addproductInterface): Observable<any> {
-    return this.http.post<any>(`${environment.SERVER_URL}/products/all`, products);
+    return this.http.post<any>(`${environment.SERVER_URL}/products/create`, products);
   }
 
   

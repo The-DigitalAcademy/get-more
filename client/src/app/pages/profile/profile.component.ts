@@ -24,7 +24,7 @@ export class ProfileComponent implements OnInit {
 
   // remove user data from local storage
   logout() {
-    localStorage.clear();
+    localStorage.removeItem('user');
     this.user = null;
     this.router.navigate(['']);
   }

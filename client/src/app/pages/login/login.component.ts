@@ -30,6 +30,8 @@ export class LoginComponent {
           this.alertService.success(data.message);
           this.router.navigate(['/dash/admin']);
         } else {
+          this.auth.setUserData(data);
+          this.alertService.success(data.message);
           this.router.navigate(['/dash']);
         }
       },
