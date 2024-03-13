@@ -17,6 +17,7 @@ import { ViewPageComponent } from './pages/view-page/view-page.component';
 import { AllProductComponent } from './pages/all-product/all-product.component';
 import { AddProductComponent } from './pages/admin/add-product/add-product.component';
 import { SingleProductComponent } from './pages/single-product/single-product.component';
+import { OrderHistoryComponent } from './pages/order-history/order-history.component';
 
 const routes: Routes = [
   {
@@ -66,6 +67,10 @@ const routes: Routes = [
       {
         path: 'view',
         component: ViewPageComponent,
+      },
+      {
+       path: 'order-history',
+       component: OrderHistoryComponent,
       },
       {
         path: '',

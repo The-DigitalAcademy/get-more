@@ -25,6 +25,8 @@ import { AllProductComponent } from './pages/all-product/all-product.component';
 import { ViewPageComponent } from './pages/view-page/view-page.component';
 import { AddProductComponent } from './pages/admin/add-product/add-product.component';
 import { AdminPageComponent } from './pages/admin/admin-page/admin-page.component';
+import { OrderHistoryComponent } from './pages/order-history/order-history.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { AdminPageComponent } from './pages/admin/admin-page/admin-page.componen
     AdminPageComponent,
     ViewPageComponent,
     AllProductComponent,
-    AddProductComponent
+    AddProductComponent,
+    OrderHistoryComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
