@@ -1,8 +1,16 @@
+<h1 routerLink="/dash/home"><</h1>
 <div class="mycard text-center">
     <div class="card-body">
-        <img [src]="product.image" alt="">
-      <h5 class="card-title mt-2">{{product.name}}</h5>
-      <div class="display-4">R{{product.price}}</div>
-      <a href="#" class="btn btn-sm btn-outline-secondary mt-2">Add to cart</a>
+      <img
+      src={{product.image}}
+        class="card-img-top"
+        alt="cologne"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{product.name}}</h5>
+        <p class="card-text">{{product.description}}</p>
+        <p class="card-text">{{product.price}}</p>
+        <button type="button" class="btn btn-primary">add to cart</button>
     </div>
   </div>
+

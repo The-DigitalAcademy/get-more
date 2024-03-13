@@ -2,6 +2,18 @@
 
 <div class="row pt-4">
   <div class="col-6" *ngFor="let product of products">
-    <app-product [product]="product"></app-product>
+    <div class="mycard text-center">
+      <div class="card-body">
+        <img src="{{ product.image }}" alt="" />
+        <h5 class="card-title mt-2">{{ product.name }}</h5>
+        <div class="display-4">R{{ product.price }}</div>
+        <a
+          class="btn btn-sm btn-outline-secondary mt-2"
+          (click)="onView(product._id)"
+          >view</a
+        >
+        <a class="btn btn-sm btn-outline-secondary mt-2">Add to cart</a>
+      </div>
+    </div>
   </div>
 </div>

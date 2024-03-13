@@ -7,16 +7,11 @@ import { HomeComponent } from './pages/home/home.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { UpdateProfileComponent } from './pages/update-profile/update-profile.component';
-
 import { AdminPageComponent } from './pages/admin/admin-page/admin-page.component';
 
-
 import { ViewPageComponent } from './pages/view-page/view-page.component';
-
-
-import { AllProductComponent } from './pages/all-product/all-product.component';
 import { AddProductComponent } from './pages/admin/add-product/add-product.component';
-import { SingleProductComponent } from './pages/single-product/single-product.component';
+import { ProductComponent } from './ui/product/product.component';
 
 const routes: Routes = [
   {
@@ -44,12 +39,8 @@ const routes: Routes = [
         component: AddProductComponent
       },
     {
-      path: 'all-product',
-      component: AllProductComponent
-    },
-    {
       path: 'single-product/:id',
-      component: SingleProductComponent
+      component: ProductComponent
     },
     {
         path: 'cart',
