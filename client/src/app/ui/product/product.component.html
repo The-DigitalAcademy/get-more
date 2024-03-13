@@ -10,7 +10,8 @@
         <h5 class="card-title">{{product.name}}</h5>
         <p class="card-text">{{product.description}}</p>
         <p class="card-text">{{product.price}}</p>
-        <button type="button" class="btn btn-primary">add to cart</button>
+        <button *ngIf="removeCart" class="form-button" (click)=" removeToCart(productData.id)">Remove to Cart</button>
+        <button *ngIf="!removeCart" class="form-button" (click)="addToCart()">Add to Cart</button>
     </div>
   </div>
 
