@@ -20,7 +20,6 @@ import { CategoriesComponent } from './ui/categories/categories.component';
 import { ProductComponent } from './ui/product/product.component';
 import { UpdateProfileComponent } from './pages/update-profile/update-profile.component';
 import { CommonModule } from '@angular/common';
-import { AllProductComponent } from './pages/all-product/all-product.component';
 
 import { ViewPageComponent } from './pages/view-page/view-page.component';
 import { AddProductComponent } from './pages/admin/add-product/add-product.component';
@@ -41,7 +40,6 @@ import { AdminPageComponent } from './pages/admin/admin-page/admin-page.componen
     UpdateProfileComponent,
     AdminPageComponent,
     ViewPageComponent,
-    AllProductComponent,
     AddProductComponent
   ],
   imports: [
