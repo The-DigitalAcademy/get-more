@@ -29,7 +29,7 @@ content-type: application/json
 
 
 ### Get one product
-GET  {{SERVER}}/api/products/single/65e6bcf14d214acb5dd73c30
+GET  {{SERVER}}/api/products/single/65f1495a008d19edaf94a375
 content-type: application/json
 
 

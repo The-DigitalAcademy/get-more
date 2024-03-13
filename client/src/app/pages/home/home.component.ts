@@ -28,7 +28,6 @@ constructor(
 ngOnInit(): void {
   this.productService.getAllProductsFunc().subscribe((data: any) => {
     this.products = data;
-    console.log(this.products);
   });
 }
 
