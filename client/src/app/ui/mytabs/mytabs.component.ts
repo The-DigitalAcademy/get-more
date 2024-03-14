@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoginResponseInterface } from 'src/app/interfaces/interfaces';
+import { LoginResponseInterface } from 'src/app/interfaces/user-interfaces';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({

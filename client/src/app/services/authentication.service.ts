@@ -9,7 +9,7 @@ import {
   RegisterInterface,
   RegisterResponseInterface,
   UserInterface,
-} from 'src/app/interfaces/interfaces';
+} from 'src/app/interfaces/user-interfaces';
 
 @Injectable({
   providedIn: 'root',
