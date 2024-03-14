@@ -34,19 +34,19 @@ export class ProductService {
   //cart 
 
   
-  addProduct(data: product) {
-    return this.http.post(`${environment.SERVER_URL}/products`, data);
-  }
-  productList() {
-    return this.http.get<product[]>(`${environment.SERVER_URL}/products`);
-  }
+  // addProduct(data: product) {
+  //   return this.http.post(`${environment.SERVER_URL}/products`, data);
+  // }
+  // productList() {
+  //   return this.http.get<product[]>(`${environment.SERVER_URL}/products`);
+  // }
 
-  deleteProduct(id: number) {
-    return this.http.delete(`${environment.SERVER_URL}/products/${id}`);
-  }
+  // deleteProduct(id: number) {
+  //   return this.http.delete(`${environment.SERVER_URL}/products/${id}`);
+  // }
 
   getProduct(id: string) {
-    return this.http.get<product>(`${environment.SERVER_URL}/products/${id}`);
+    return this.http.get<product>(`${environment.SERVER_URL}/products/single/${id}`);
   }
 
   updateProduct(product: product) {
@@ -55,28 +55,15 @@ export class ProductService {
       product
     );
   }
-  popularProducts() {
-    return this.http.get<product[]>(`${environment.SERVER_URL}/products?_limit=3`);
-  }
-
-  trendyProducts() {
-    return this.http.get<product[]>(`${environment.SERVER_URL}/products?_limit=8`);
-  }
-
-  searchProduct(query: string) {
-    return this.http.get<product[]>(
-      `${environment.SERVER_URL}/products?q=${query}`
-    );
-  }
 
   localAddToCart(data: product) {
-    let cartData = [];
-    let localCart = localStorage.getItem('localCart');
+    const cartData = [];
+    const localCart = localStorage.getItem('localCart');
     if (!localCart) {
       localStorage.setItem('localCart', JSON.stringify([data]));
       this.cartData.emit([data]);
     } else {
-      cartData = JSON.parse(localCart);
+      this.cartData = JSON.parse(localCart);
       cartData.push(data);
       localStorage.setItem('localCart', JSON.stringify(cartData));
       this.cartData.emit(cartData);
@@ -93,9 +80,10 @@ export class ProductService {
     }
   }
 
-  addToCart(cartData: cart) {
-    return this.http.post(`${environment.SERVER_URL}/cart`, cartData);
-  }
+  // addToCart(cartData: cart) {
+  //   return this.http.post('http://localhost:3000/cart', cartData);
+  
+  // }
   getCartList(userId: number) {
     return this.http
       .get<product[]>(`${environment.SERVER_URL}/cart?userId=` + userId, {
@@ -107,34 +95,34 @@ export class ProductService {
         }
       });
   }
-  removeToCart(cartId: number) {
-    return this.http.delete(`${environment.SERVER_URL}/cart/` + cartId);
-  }
-  currentCart() {
-    let userStore = localStorage.getItem('user');
-    let userData = userStore && JSON.parse(userStore);
-    return this.http.get<cart[]>(`${environment.SERVER_URL}/cart?userId=` + userData.id);
-  }
+  // removeToCart(cartId: number) {
+  //   return this.http.delete(`${environment.SERVER_URL}/cart/` + cartId);
+  // }
+  // currentCart() {
+  //   let userStore = localStorage.getItem('user');
+  //   let userData = userStore && JSON.parse(userStore);
+  //   return this.http.get<cart[]>(`${environment.SERVER_URL}/cart?userId=` + userData.id);
+  // }
 
-  orderNow(data: order) {
-    return this.http.post(`${environment.SERVER_URL}/orders`, data);
-  }
-  orderList() {
-    let userStore = localStorage.getItem('user');
-    let userData = userStore && JSON.parse(userStore);
-    return this.http.get<order[]>(`${environment.SERVER_URL}/orders?userId=` + userData.id);
-  }
+  // orderNow(data: order) {
+  //   return this.http.post(`${environment.SERVER_URL}/orders`, data);
+  // }
+  // orderList() {
+  //   let userStore = localStorage.getItem('user');
+  //   let userData = userStore && JSON.parse(userStore);
+  //   return this.http.get<order[]>(`${environment.SERVER_URL}/orders?userId=` + userData.id);
+  // }
 
-  deleteCartItems(cartId: number) {
-    return this.http.delete(`${environment.SERVER_URL}/cart/` + cartId).subscribe((result) => {
-      this.cartData.emit([]);
-    })
-  }
+  // deleteCartItems(cartId: number) {
+  //   return this.http.delete(`${environment.SERVER_URL}/cart/` + cartId).subscribe((result) => {
+  //     this.cartData.emit([]);
+  //   })
+  // }
 
-  cancelOrder(orderId:number){
-    return this.http.delete(`${environment.SERVER_URL}/orders/`+orderId)
+  // cancelOrder(orderId:number){
+  //   return this.http.delete(`${environment.SERVER_URL}/orders/`+orderId)
 
-  }
+  // }
 
 }
 
