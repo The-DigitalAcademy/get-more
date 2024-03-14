@@ -16,6 +16,9 @@ app.use("/api/users/", require("./Routes/userRoutes"));
 
 app.use("/api/products/", require("./Routes/productsRouts"));
 
+///cart
+app.use("/api/cart" , require( "./Routes/cart"));
+
 app.get('/', (req, res) => {
   res.json({ message: "Hello from the server" });
 });
@@ -23,3 +26,4 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`server is up http://localhost:${port}`);
 });
+
