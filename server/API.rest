@@ -73,3 +73,20 @@ content-type: application/json
     "email": "mpho@gmail.com",
     "password": "123456"
 }
+
+
+###cart
+ POST  {{SERVER}}/api/cart/create
+Content-Type: application/json
+
+{
+    "user": "65d493b1e7a8f30fd85edbc7",
+    "productId": "65e1d2dbb1682fe5ae32f281",
+    "quantity":"1",
+    "price": "590"
+}
+
+
+
+###get products from cart
+GET  {{SERVER}}/api/cart/get/65dd90d577a2b6796d2e1b62

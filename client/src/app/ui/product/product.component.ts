@@ -2,7 +2,9 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertService } from 'src/app/services/alert.service';
 import { ProductService } from 'src/app/services/product.service';
-import { cart, product } from 'src/app/interfaces/interfaces';
+import { cart, product } from 'src/app/interfaces/cart-interface';
+import { CartService } from 'src/app/services/cart.service';
+
 
 @Component({
   selector: 'app-product',
@@ -21,7 +23,9 @@ export class ProductComponent implements OnInit {
     private alertService: AlertService,
     private router: Router,
     private route: ActivatedRoute,
-    private productService: ProductService
+    private productService: ProductService,
+    private cartService: CartService,
+    
   ) {}
 
   ngOnInit(): void {
@@ -53,7 +57,7 @@ export class ProductComponent implements OnInit {
         let user = localStorage.getItem('user');
         if (user) {
           let userId = user && JSON.parse(user).id;
-          this.productService.getCartList(userId);
+          this.cartService.getCartList(userId);
 
           this.productService.cartData.subscribe((result) => {
             let item = result.filter(
@@ -80,7 +84,7 @@ export class ProductComponent implements OnInit {
     if (this.product) {
       this.product.quantity = this.productQuantity;
       if (!localStorage.getItem('user')) {
-        this.productService.localAddToCart(this.product);
+        this.cartService.localAddToCart(this.product);
         this.removeCart = true;
       } else {
         let user = localStorage.getItem('user');
@@ -102,7 +106,7 @@ export class ProductComponent implements OnInit {
   }
   removeToCart(productId: number) {
     if (!localStorage.getItem('user')) {
-      this.productService.removeItemFromCart(productId);
+      this.cartService.removeItemFromCart(productId);
     } else {
       console.warn('cartData', this.cartData);
 
